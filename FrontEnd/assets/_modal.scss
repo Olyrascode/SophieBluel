@@ -1,0 +1,209 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.js-modal {
+  border: none;
+  background-color: transparent;
+}
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s both;
+
+  .modal-wrapper {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    height: 688px;
+    max-width: calc(100vw - 20px);
+    max-width: calc(100vh - 20px);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    h2 {
+      color: #000;
+      text-align: center;
+      font-family: Work Sans;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding-bottom: 25px;
+    }
+
+    .js-modal-close {
+      width: 24px;
+      position: relative;
+      left: 95%;
+    }
+    .modalWork {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 50px;
+      margin-right: 50px;
+
+      .gallery-item {
+        display: flex;
+        justify-content: end;
+        .deleteIcon {
+          position: absolute;
+          width: 25px;
+          padding: 6px;
+          border-radius: 5px;
+          margin-top: 5px;
+          margin-right: 15px;
+          background-color: black;
+        }
+
+        img {
+          max-width: 78px;
+          margin-bottom: 25px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+    hr {
+      width: 420px;
+      color: gray;
+      margin-top: 65px;
+    }
+    .js-modal-trigger2 {
+      width: 237px;
+      height: 36px;
+      border: none;
+      background-color: #1d6154;
+      border-radius: 60px;
+      color: #fff;
+      text-align: center;
+      font-family: Syne;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+}
+
+//modal 2 //
+#modal2 {
+  .modal-wrapper {
+    .js-modal-back {
+      width: 20px;
+      position: absolute;
+    }
+    .modale-projet-form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .form-group-photo {
+        border-radius: 5px;
+        width: 420px;
+        height: 169px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+        background: #e8f1f6;
+      }
+      .form-group-title {
+        display: flex;
+        flex-direction: column;
+        label {
+          color: #3d3d3d;
+          font-family: Work Sans;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        input {
+          width: 420px;
+          height: 51px;
+          background: #fff;
+          box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+          padding: 16px;
+          margin-top: 10px;
+          margin-bottom: 21px;
+          border: none;
+        }
+      }
+      .form-group-id {
+        display: flex;
+        flex-direction: column;
+        label {
+          color: #3d3d3d;
+          font-family: Work Sans;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        select {
+          border: none;
+        }
+        #categorie {
+          width: 420px;
+          height: 51px;
+          background: #fff;
+          box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+          padding: 16px;
+          margin-top: 10px;
+        }
+      }
+
+      .js-add-work {
+        width: 237px;
+        height: 36px;
+        border: none;
+        background-color: rgba(128, 128, 128, 0.601);
+        border-radius: 60px;
+        color: #fff;
+        text-align: center;
+        font-family: Syne;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.modal[aria-hidden="true"] {
+  animation: fadeOut 0.3s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
