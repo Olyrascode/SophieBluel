@@ -193,11 +193,31 @@ document.querySelectorAll(".deleteIcon").forEach((deleteIcon) => {
 });
 
 const btnAjouterProjet = document.querySelector(".js-add-work");
+
 btnAjouterProjet.addEventListener("click", addWork);
+
+function areAllFieldsFilled() {
+  const title = document.querySelector(".js-title").value;
+  const categoryId = document.querySelector(".js-categoryId").value;
+  const image = document.querySelector(".js-image").value.trim();
+  
+  return title !== "" && categoryId !== "" && image !== '';
+}
+
+document.querySelectorAll(".js-title, .js-categoryId, .js-image").forEach(element => {
+  element.addEventListener("input", () => {
+    if (areAllFieldsFilled()) {
+      btnAjouterProjet.style.backgroundColor = 'green';
+    } else {
+      btnAjouterProjet.style.backgroundColor = '';
+    }
+  })
+});
 
 
 // Fonction pour ajouter un projet
 async function addWork(event) {
+  //empeche le rechargement de la page uniquement en site hebergé//
   event.preventDefault();
 
   const title = document.querySelector(".js-title").value;
@@ -205,9 +225,7 @@ async function addWork(event) {
   const image = document.querySelector(".js-image").files[0];
 
 
-  function areAllFieldsFilled() {
-    return title.trim() !== "" && categoryId.trim() !== "" && image;
-  }
+  
 
   // Récupérez le token depuis le localStorage
   const token = localStorage.getItem("token");
