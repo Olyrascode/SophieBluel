@@ -369,6 +369,22 @@ document.querySelectorAll(".js-title, .js-categoryId, .js-image").forEach(elemen
   })
 });
 
+function imageReader() {
+  document.querySelector("#photo").addEventListener('change', function(e) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.querySelector('#photo-preview').src = e.target.result;
+    }
+
+    reader.readAsDataURL(e.target.files[0]);
+  });
+}
+// Appeler imageReader une fois que le DOM est entièrement chargé
+document.addEventListener('DOMContentLoaded', function() {
+  imageReader();
+  console.log();
+});
+
 
 // Fonction pour ajouter un projet
 async function addWork(event) {
@@ -393,7 +409,7 @@ async function addWork(event) {
     // If conditions are met, proceed with further actions and change the button color to green
     // For demonstration purposes, I'm using a setTimeout to simulate an asynchronous action
     setTimeout(() => {
-      btnAjouterProjet.style.backgroundColor = 'green';
+      btnAjouterProjet.style.backgroundColor = '#1d6154';
     }, 0);
   } else if (categoryId !== "1" && categoryId !== "2" && categoryId !== "3") {
     alert("Merci de remplir tous les champs et de choisir une catégorie valide");
@@ -436,3 +452,4 @@ console.log(event);
   }
   
 }
+
